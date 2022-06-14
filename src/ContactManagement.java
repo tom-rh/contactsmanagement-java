@@ -1,10 +1,8 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ContactManagement {
-    private ArrayList<Contact> contactList;
+    private final ArrayList<Contact> contactList;
 
     public ContactManagement(){
         contactList = new ArrayList<Contact>();
@@ -14,8 +12,12 @@ public class ContactManagement {
         return contactList.size();
     }
 
-    public void addContact(String prenom, String nom, int age, String telephone) {
+    public void addContact( String prenom, String nom, int age, String telephone) {
         Contact contact = new Contact(prenom, nom, age, telephone);
+        contactList.add(contact);
+    }
+    public void addContact(int id, String prenom, String nom, int age, String telephone) {
+        Contact contact = new Contact(id, prenom, nom, age, telephone);
         contactList.add(contact);
     }
 
@@ -29,10 +31,10 @@ public class ContactManagement {
         int count = 0;
         while (contactList.size() > count) {
             out.write(String.valueOf(contactList.get(count).getId()) + ";");
-            out.write(String.valueOf(contactList.get(count).getPrenom()) + ";");
-            out.write(String.valueOf(contactList.get(count).getNom()) + ";");
+            out.write(contactList.get(count).getPrenom() + ";");
+            out.write(contactList.get(count).getNom() + ";");
             out.write(String.valueOf(contactList.get(count).getAge()) + ";");
-            out.write(String.valueOf(contactList.get(count).getTelephone()));
+            out.write(contactList.get(count).getTelephone());
             out.println();
             count++;
         }
