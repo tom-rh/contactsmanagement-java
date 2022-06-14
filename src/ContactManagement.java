@@ -38,4 +38,13 @@ public class ContactManagement {
         }
         out.close();
     }
+
+    public void displayContactListConsole() {
+        int count = 0;
+        System.out.println("id ; prenom ; nom ; age ; telephone");
+        while (contactList.size() > count) {
+            System.out.println(String.valueOf(contactList.get(count).getId()) + ";" + contactList.get(count).getPrenom() + ";" + contactList.get(count).getNom() + ";" + String.valueOf(contactList.get(count).getAge()) + ";" + contactList.get(count).getTelephone());
+            count++;
+        }
+    }
 }
