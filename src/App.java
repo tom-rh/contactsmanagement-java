@@ -1,13 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class App {
     public App() {
         // Gestion des contacts
         ContactManagement contactManagement = new ContactManagement();
-        contactManagement.saveContacts();
 
         // Visuel
         JFrame frame = new JFrame("Gestion des contacts");
@@ -22,18 +19,18 @@ public class App {
         // Sous-menu pour Gestion
         JMenuItem newContact = new JMenuItem("Ajouter contact");
 
-        newContact.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String getPrenom = getNonBlankInput("Indiquez le prénom du contact :");
+        newContact.addActionListener(e -> {
+            String getPrenom = getNonBlankInput("Indiquez le prénom du contact :");
 
-                String getNom = getNonBlankInput("Indiquez le nom du contact :");
+            String getNom = getNonBlankInput("Indiquez le nom du contact :");
 
-                int getAge = Integer.parseInt(getNonBlankInput("Indiquez l'âge du contact :"));
+            int getAge = Integer.parseInt(getNonBlankInput("Indiquez l'âge du contact :"));
 
-                String getTelephone = getNonBlankInput("Indiquez le numéro de téléphone du contact :");
+            String getTelephone = getNonBlankInput("Indiquez le numéro de téléphone du contact :");
 
-                contactManagement.addContact(getPrenom,getNom,getAge,getTelephone);
-            }
+            contactManagement.addContact(getPrenom,getNom,getAge,getTelephone);
+
+            contactManagement.saveContacts();
         });
 
         JMenuItem editContact = new JMenuItem("Modifier un contact");
@@ -57,8 +54,6 @@ public class App {
                 {"1","Tom", "R", "20", "0663380401"},
                 {"2","T2", "R2", "21", "0668848495"}
         };
-
-        Contact Tom = new Contact("Tom", "Pacaud", 21, "0648503264");
 
         // Créer le JTable
         JTable table = new JTable(data, column);
