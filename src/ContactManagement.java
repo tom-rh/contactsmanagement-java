@@ -4,12 +4,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class ContactManagement {
-    private int _numberOfContacts;
     private ArrayList<Contact> contactList;
 
     public ContactManagement(){
-        _numberOfContacts = 0;
         contactList = new ArrayList<Contact>();
+    }
+
+    public int getNumberOfContacts() {
+        return contactList.size();
     }
 
     public void addContact(String prenom, String nom, int age, String telephone) {
@@ -24,7 +26,16 @@ public class ContactManagement {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        out.write("test");
+        int count = 0;
+        while (contactList.size() > count) {
+            out.write(String.valueOf(contactList.get(count).getId()) + ";");
+            out.write(String.valueOf(contactList.get(count).getPrenom()) + ";");
+            out.write(String.valueOf(contactList.get(count).getNom()) + ";");
+            out.write(String.valueOf(contactList.get(count).getAge()) + ";");
+            out.write(String.valueOf(contactList.get(count).getTelephone()));
+            out.println();
+            count++;
+        }
         out.close();
     }
 }
