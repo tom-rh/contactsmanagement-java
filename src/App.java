@@ -24,17 +24,13 @@ public class App {
 
         newContact.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame jFramePrenom = new JFrame();
-                String getPrenom = JOptionPane.showInputDialog(jFramePrenom, "Indiquez le prénom du contact :");
+                String getPrenom = getNonBlankInput("Indiquez le prénom du contact :");
 
-                JFrame jFrameNom = new JFrame();
-                String getNom = JOptionPane.showInputDialog(jFrameNom, "Indiquez le nom du contact :");
+                String getNom = getNonBlankInput("Indiquez le nom du contact :");
 
-                JFrame jFrameAge = new JFrame();
-                int getAge = Integer.parseInt(JOptionPane.showInputDialog(jFrameAge, "Indiquez l'âge du contact :"));
+                int getAge = Integer.parseInt(getNonBlankInput("Indiquez l'âge du contact :"));
 
-                JFrame jFrameTelephone = new JFrame();
-                String getTelephone = JOptionPane.showInputDialog(jFrameTelephone, "Indiquez le numéro de téléphone du contact :");
+                String getTelephone = getNonBlankInput("Indiquez le numéro de téléphone du contact :");
 
                 contactManagement.addContact(getPrenom,getNom,getAge,getTelephone);
             }
@@ -54,12 +50,12 @@ public class App {
         frame.add(panel);
 
         // L'en-têtes du JTable
-        String[] column = {"Prénom", "Nom", "Age", "Telephone"};
+        String[] column = {"ID", "Prénom", "Nom", "Age", "Telephone"};
 
         // Les lignes du JTable
         String[][] data = {
-                {"Tom", "R", "20", "0663380401"},
-                {"T2", "R2", "21", "0668848495"}
+                {"1","Tom", "R", "20", "0663380401"},
+                {"2","T2", "R2", "21", "0668848495"}
         };
 
         Contact Tom = new Contact("Tom", "Pacaud", 21, "0648503264");
@@ -71,13 +67,21 @@ public class App {
 
         frame.add(scroll);
 
-
-
-
         frame.pack();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setVisible(true);
+    }
+
+    String getNonBlankInput(String saisie) {
+        String input = JOptionPane.showInputDialog(saisie);
+
+        while (input.equals("")) {
+            JOptionPane.showMessageDialog(null, "Vous devez écrire quelque chose !");
+            input = JOptionPane.showInputDialog(saisie);
+        }
+
+        return input;
     }
 }
