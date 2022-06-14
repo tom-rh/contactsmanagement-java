@@ -1,15 +1,15 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class ContactManagement {
-    // tableau de contacts
-    private Vector<Contact> contactList;
     private int _numberOfContacts;
+    private ArrayList<Contact> contactList;
 
     public ContactManagement(){
         _numberOfContacts = 0;
+        contactList = new ArrayList<Contact>();
     }
 
     public void addContact(String prenom, String nom, int age, String telephone) {
