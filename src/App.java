@@ -60,6 +60,11 @@ public class App {
         JScrollPane scroll = new JScrollPane(table);
         table.setFillsViewportHeight(true);
 
+        JLabel text = new JLabel();
+        text.setText("Nombre total de contacts : " + String.valueOf(contactManagement.getNumberOfContacts()));
+
+        frame.add(text);
+
         frame.add(scroll);
 
         frame.pack();
