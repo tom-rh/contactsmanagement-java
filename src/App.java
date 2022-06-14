@@ -75,7 +75,8 @@ public class App {
     }
 
     String getNonBlankInput(String saisie) {
-        String input = JOptionPane.showInputDialog(saisie);
+        String input;
+        input = JOptionPane.showInputDialog(saisie);
 
         while (input.equals("")) {
             JOptionPane.showMessageDialog(null, "Vous devez écrire quelque chose !");
