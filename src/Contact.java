@@ -1,10 +1,13 @@
 public class Contact {
+    private static int count = 0;
+    private int _id;
     private String _prenom;
     private String _nom;
     private int _age;
     private String _telephone;
 
     public Contact() {
+        _id = ++count;
         _prenom = "Inconnu";
         _nom = "Inconnu";
         _age = 0;
@@ -16,6 +19,10 @@ public class Contact {
         _nom = nom;
         _age = age;
         _telephone = telephone;
+    }
+
+    public int getId() {
+        return _id;
     }
 
     public String getPrenom() {
@@ -40,5 +47,13 @@ public class Contact {
 
     public void setNom(String nom) {
         _nom = nom;
+    }
+
+    public void setAge(int age) {
+        _age = age;
+    }
+
+    public void setTelephone(String telephone) {
+        _telephone = telephone;
     }
 }
