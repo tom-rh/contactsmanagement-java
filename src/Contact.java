@@ -21,6 +21,14 @@ public class Contact {
         _telephone = telephone;
     }
 
+    public Contact(int id, String prenom, String nom, int age, String telephone) {
+        _id = id;
+        _prenom = prenom;
+        _nom = nom;
+        _age = age;
+        _telephone = telephone;
+    }
+
     public int getId() {
         return _id;
     }
