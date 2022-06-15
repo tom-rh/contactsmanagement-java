@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serial;
 import java.util.ArrayList;
 
+/*
+ * Gestion du visuel et des actions de l'application
+ */
 public class App {
     private final JTable table;
     private final ContactManagement contactManagement;
@@ -9,7 +13,10 @@ public class App {
     private final JLabel textNumberOfContact;
     public App() {
         // Gestion des contacts
-        ContactManagement contactManagement = new ContactManagement();
+        contactManagement = new ContactManagement();
+
+        // Récupération du nombre de contact
+        numberOfContacts = contactManagement.getNumberOfContacts();
 
         // Visuel
         JFrame frame = new JFrame("Gestion des contacts");
@@ -19,12 +26,11 @@ public class App {
         // Menu principal
         JMenuBar menu = new JMenuBar();
         JMenu gestion = new JMenu("Gestion");
-        JMenu help = new JMenu("Aide");
 
         // Sous-menu pour Gestion
         JMenuItem newContact = new JMenuItem("Ajouter contact");
 
-        // Action à réaliser si on appuie sur le bouton
+        // Action à réaliser si on appuie sur le bouton "Ajouter contact"
         newContact.addActionListener(e -> {
             String getPrenom = getNonBlankInput("Indiquez le prénom du contact :");
 
@@ -34,7 +40,7 @@ public class App {
 
             String getTelephone = getNonBlankInput("Indiquez le numéro de téléphone du contact :");
 
-            contactManagement.addContact(getPrenom,getNom,getAge,getTelephone);
+            contactManagement.addContact(getLastId(),getPrenom,getNom,getAge,getTelephone);
 
             contactManagement.saveContacts();
 
@@ -63,24 +69,21 @@ public class App {
         gestion.add(editContact);
 
         menu.add(gestion);
-        menu.add(help);
 
         frame.setLayout(new BorderLayout());
 
         frame.add(menu, BorderLayout.NORTH);
 
-        //frame.add(panel);
+        // Affichage du nombre total de contacts
+        textNumberOfContact = new JLabel();
+        textNumberOfContact.setText("Nombre total de contacts : " + numberOfContacts);
 
-        JLabel text = new JLabel();
-        text.setText("Nombre total de contacts : " + contactManagement.getNumberOfContacts());
-
-        panel.add(text);
+        panel.add(textNumberOfContact);
 
         // Bouton permettant d'actualiser l'affichage du tableau
-        JButton btnUpdate =new JButton("Actualiser");
-        btnUpdate.addActionListener(e -> {
-            //this.displayContactList();
-        });
+        JButton btnUpdate = new JButton("Actualiser");
+
+        btnUpdate.addActionListener(e -> App.this.reloadData());
 
         panel.add(btnUpdate);
 
@@ -123,15 +126,14 @@ public class App {
         frame.setVisible(true);
     }
 
+    // Méthode permettant de vérifier si les input saisies par les utilisateurs ne sont pas vides
     String getNonBlankInput(String saisie) {
         String input;
         input = JOptionPane.showInputDialog(saisie);
-
         while (input.equals("")) {
             JOptionPane.showMessageDialog(null, "Vous devez écrire quelque chose !");
             input = JOptionPane.showInputDialog(saisie);
         }
-
         return input;
     }
 
