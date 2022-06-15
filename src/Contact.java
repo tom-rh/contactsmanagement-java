@@ -6,6 +6,7 @@ public class Contact {
     private int _age;
     private String _telephone;
 
+    // Constructeur sans informations spécifiées
     public Contact() {
         _id = ++count;
         _prenom = "Inconnu";
@@ -14,6 +15,7 @@ public class Contact {
         _telephone = "";
     }
 
+    // Construteur avec les informations spécifiées mais sans ID
     public Contact(String prenom, String nom, int age, String telephone) {
         _prenom = prenom;
         _nom = nom;
@@ -21,6 +23,7 @@ public class Contact {
         _telephone = telephone;
     }
 
+    // Construteur avec les informations spécifiées
     public Contact(int id, String prenom, String nom, int age, String telephone) {
         _id = id;
         _prenom = prenom;
