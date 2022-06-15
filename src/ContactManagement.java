@@ -6,16 +6,24 @@ public class ContactManagement {
 
     public ContactManagement(){
         _contactList = new ArrayList<>();
-        // Lecture des lignes du fichier de sauvegarde pour initialiser la liste de contacts
-        try(BufferedReader br = new BufferedReader(new FileReader("contacts.txt"))) {
-            for(String line; (line = br.readLine()) != null; ) {
-                String[] parts = line.split(";");
-                this.addContact(Integer.parseInt(parts[0]), parts[1], parts[2], Integer.parseInt(parts[3]), parts[4]);
+        // Lecture des lignes du fichier de sauvegarde pour initialiser la liste de contacts si le fichier existe sinon création du fichier
+        File file = new File("contacts.txt");
+        if(file.exists()) {
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                for (String line; (line = br.readLine()) != null; ) {
+                    String[] parts = line.split(";");
+                    this.addContact(Integer.parseInt(parts[0]), parts[1], parts[2], Integer.parseInt(parts[3]), parts[4]);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } else {
+            try {
+                new PrintWriter(new FileWriter(file));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
-        this.displayContactListConsole();
     }
 
     public int getNumberOfContacts() {
