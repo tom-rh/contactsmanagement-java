@@ -5,7 +5,7 @@ public class ContactManagement {
     private final ArrayList<Contact> _contactList;
 
     public ContactManagement(){
-        _contactList = new ArrayList<Contact>();
+        _contactList = new ArrayList<>();
         // Lecture des lignes du fichier de sauvegarde pour initialiser la liste de contacts
         try(BufferedReader br = new BufferedReader(new FileReader("contacts.txt"))) {
             for(String line; (line = br.readLine()) != null; ) {
