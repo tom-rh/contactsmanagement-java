@@ -34,15 +34,13 @@ public class ContactManagement {
         return _contactList;
     }
 
-    public void addContact( String prenom, String nom, int age, String telephone) {
-        Contact contact = new Contact(prenom, nom, age, telephone);
-        _contactList.add(contact);
-    }
+    // Ajout d'un nouveau contact dans l'ArrayList
     public void addContact(int id, String prenom, String nom, int age, String telephone) {
         Contact contact = new Contact(id, prenom, nom, age, telephone);
         _contactList.add(contact);
     }
 
+    // Modifier une information concernant un contact
     public void editContact(int id, String choice, String input) {
         int countLine = 0;
         while (_contactList.size() > countLine) {
@@ -59,6 +57,7 @@ public class ContactManagement {
         }
     }
 
+    // Sauvegarde de l'ArrayList de contacts dans un fichier
     public void saveContacts() {
         PrintWriter out;
         try {
@@ -77,8 +76,11 @@ public class ContactManagement {
             count++;
         }
         out.close();
+
+        this.displayContactListConsole();
     }
 
+    // Affichage de l'ArrayList de contacts dans la console
     public void displayContactListConsole() {
         int count = 0;
         System.out.println("id ; prenom ; nom ; age ; telephone");
