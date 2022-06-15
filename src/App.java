@@ -49,9 +49,9 @@ public class App {
 
         JMenuItem editContact = new JMenuItem("Modifier un contact");
 
-        // Action à réaliser si on appuie sur le bouton
+        // Action à réaliser si on appuie sur le bouton "Modifier un contact"
         editContact.addActionListener(e -> {
-            int getID = Integer.parseInt(getNonBlankInput("Spécifiez l'ID du contact auquel vous vous souhaitez apporter des modifications :"));
+            int getID = Integer.parseInt(getNonBlankInput("Spécifiez l'ID du contact auquel vous souhaitez apporter des modifications :"));
 
             String[] choices = { "Prénom", "Nom", "Age", "Téléphone"};
             String getInfoToChange = (String) JOptionPane.showInputDialog(null, "Choisissez l'information que vous souhaitez modifier", "Choix de l'information à modifier :", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
@@ -65,8 +65,25 @@ public class App {
             this.reloadData();
         });
 
+        JMenuItem deleteContact = new JMenuItem("Supprimer un contact");
+
+        // Action à réaliser si on appuie sur le bouton
+        deleteContact.addActionListener(e -> {
+            int getID = Integer.parseInt(getNonBlankInput("Spécifiez l'ID du contact que vous souhaitez supprimer :"));
+
+            boolean deleted = contactManagement.deleteContact(getID);
+
+            contactManagement.saveContacts();
+
+            if (deleted)
+                this.deleteLastRowDisplay();
+
+            this.reloadData();
+        });
+
         gestion.add(newContact);
         gestion.add(editContact);
+        gestion.add(deleteContact);
 
         menu.add(gestion);
 
@@ -154,6 +171,18 @@ public class App {
 
         numberOfContacts = contactManagement.getNumberOfContacts();
         textNumberOfContact.setText("Nombre total de contacts : " + numberOfContacts);
+    }
+
+    // Méthode permettant de supprimer la dernière ligne du tableau affiché quand on procède à la suppression d'un utilisateur
+    void deleteLastRowDisplay() {
+        ArrayList<Contact> contactList = contactManagement.getContactList();
+        table.setValueAt("",contactList.size(),0);
+        table.setValueAt("",contactList.size(),1);
+        table.setValueAt("",contactList.size(),2);
+        table.setValueAt("",contactList.size(),3);
+        table.setValueAt("",contactList.size(),4);
+        table.revalidate();
+        table.repaint();
     }
 
     // Méthode permettant d'obtenir le dernier id donné à un utilisateur
