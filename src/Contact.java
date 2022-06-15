@@ -1,3 +1,6 @@
+/*
+ * Classe contact
+ */
 public class Contact {
     private static int count = 0;
     private final int _id;
@@ -15,7 +18,7 @@ public class Contact {
         _telephone = telephone;
     }
 
-    // Construteur avec les informations spécifiées
+    // Construteur avec toutes les informations spécifiées
     public Contact(int id, String prenom, String nom, int age, String telephone) {
         _id = id;
         _prenom = prenom;
