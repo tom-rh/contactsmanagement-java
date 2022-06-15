@@ -100,8 +100,16 @@ public class App {
             countLine++;
         }
 
-        // Créer le JTable
-        JTable table = new JTable(data, column);
+        // Création JTable non éditable
+        table = new JTable(data, column) {
+            @Serial
+            private static final long serialVersionUID = 1L;
+
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
         table.setRowHeight(30);
         table.setSize(500,300);
 
