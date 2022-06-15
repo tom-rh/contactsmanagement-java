@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class App {
     public App() {
@@ -19,6 +20,7 @@ public class App {
         // Sous-menu pour Gestion
         JMenuItem newContact = new JMenuItem("Ajouter contact");
 
+        // Action à réaliser si on appuie sur le bouton
         newContact.addActionListener(e -> {
             String getPrenom = getNonBlankInput("Indiquez le prénom du contact :");
 
@@ -35,6 +37,20 @@ public class App {
 
         JMenuItem editContact = new JMenuItem("Modifier un contact");
 
+        // Action à réaliser si on appuie sur le bouton
+        editContact.addActionListener(e -> {
+            int getID = Integer.parseInt(getNonBlankInput("Spécifiez l'ID du contact auquel vous vous souhaitez apporter des modifications :"));
+
+            String[] choices = { "Prénom", "Nom", "Age", "Téléphone"};
+            String getInfoToChange = (String) JOptionPane.showInputDialog(null, "Choisissez l'information que vous souhaitez modifier", "Choix de l'information à modifier :", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
+
+            String getNewInfo = getNonBlankInput("Indiquez la nouvelle valeur :");
+
+            contactManagement.editContact(getID, getInfoToChange,getNewInfo);
+
+            contactManagement.saveContacts();
+        });
+
         gestion.add(newContact);
         gestion.add(editContact);
 
@@ -46,22 +62,8 @@ public class App {
         frame.add(menu);
         frame.add(panel);
 
-        // L'en-têtes du JTable
-        String[] column = {"ID", "Prénom", "Nom", "Age", "Telephone"};
-
-        // Les lignes du JTable
-        String[][] data = {
-                {"1","Tom", "R", "20", "0663380401"},
-                {"2","T2", "R2", "21", "0668848495"}
-        };
-
-        // Créer le JTable
-        JTable table = new JTable(data, column);
-        JScrollPane scroll = new JScrollPane(table);
-        table.setFillsViewportHeight(true);
-
         JLabel text = new JLabel();
-        text.setText("Nombre total de contacts : " + String.valueOf(contactManagement.getNumberOfContacts()));
+        text.setText("Nombre total de contacts : " + contactManagement.getNumberOfContacts());
 
         frame.add(text);
 
