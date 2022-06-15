@@ -67,7 +67,36 @@ public class App {
 
         frame.add(text);
 
-        frame.add(scroll);
+        // Bouton permettant d'actualiser l'affichage du tableau
+        JButton btnUpdate =new JButton("Actualiser");
+        btnUpdate.addActionListener(e -> {
+            //this.displayContactList();
+        });
+
+        frame.add(btnUpdate);
+
+        // L'en-têtes du JTable
+        String[] column = {"ID", "Prénom", "Nom", "Age", "Telephone"};
+
+        // Remplissage du tableau avec les données stockées
+        String[][] data = new String[100][5];
+        ArrayList<Contact> contactList = contactManagement.getContactList();
+        int countLine = 0;
+        while (contactList.size() > countLine) {
+            data[countLine][0] = String.valueOf(contactList.get(countLine).getId());
+            data[countLine][1] = contactList.get(countLine).getPrenom();
+            data[countLine][2] = contactList.get(countLine).getNom();
+            data[countLine][3] = String.valueOf(contactList.get(countLine).getAge());
+            data[countLine][4] = contactList.get(countLine).getTelephone();
+            countLine++;
+        }
+
+        // Créer le JTable
+        JTable table = new JTable(data, column);
+        table.setRowHeight(30);
+        table.setSize(500,300);
+
+        frame.add(table);
 
         frame.pack();
 
