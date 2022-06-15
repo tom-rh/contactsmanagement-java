@@ -17,6 +17,7 @@ public class Contact {
 
     // Construteur avec les informations spécifiées mais sans ID
     public Contact(String prenom, String nom, int age, String telephone) {
+        _id = ++count;
         _prenom = prenom;
         _nom = nom;
         _age = age;
