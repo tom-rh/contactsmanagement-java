@@ -173,6 +173,18 @@ public class App {
         textNumberOfContact.setText("Nombre total de contacts : " + numberOfContacts);
     }
 
+    // Méthode permettant de supprimer la dernière ligne du tableau affiché quand on procède à la suppression d'un utilisateur
+    void deleteLastRowDisplay() {
+        ArrayList<Contact> contactList = contactManagement.getContactList();
+        table.setValueAt("",contactList.size(),0);
+        table.setValueAt("",contactList.size(),1);
+        table.setValueAt("",contactList.size(),2);
+        table.setValueAt("",contactList.size(),3);
+        table.setValueAt("",contactList.size(),4);
+        table.revalidate();
+        table.repaint();
+    }
+
     // Méthode permettant d'obtenir le dernier id donné à un utilisateur
     int getLastId() {
         ArrayList<Contact> contactList = contactManagement.getContactList();
