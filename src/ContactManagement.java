@@ -80,6 +80,19 @@ public class ContactManagement {
         this.displayContactListConsole();
     }
 
+    // Suppresion d'un contact de l'ArrayList de contacts
+    public boolean deleteContact(int id) {
+        int count = 0;
+        while (_contactList.size() > count) {
+            if (id == _contactList.get(count).getId()) {
+                _contactList.remove(count);
+                return true;
+            }
+            count++;
+        }
+        return false;
+    }
+
     // Affichage de l'ArrayList de contacts dans la console
     public void displayContactListConsole() {
         int count = 0;
