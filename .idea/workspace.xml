@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9582252f-71ae-4e0d-9078-5d92ff760ec4" name="Changes" comment="" />
+    <list default="true" id="9582252f-71ae-4e0d-9078-5d92ff760ec4" name="Changes" comment="fix display">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContactManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactManagement.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28kV0i6Te5UBa55t0LRN4GCMhA8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -19,9 +36,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ContactsManagement" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="contactsmanagement" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,6 +61,203 @@
       <option name="presentableId" value="Default" />
       <updated>1651760352892</updated>
     </task>
+    <task id="LOCAL-00001" summary="update name of class">
+      <created>1655123100431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123100431</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update name of class">
+      <created>1655123135673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123135673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="addContact method">
+      <created>1655123211858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123211858</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add some methods in Contact class">
+      <created>1655123241339</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123241339</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add saveContacts method">
+      <created>1655123985117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123985117</updated>
+    </task>
+    <task id="LOCAL-00006" summary="rename class">
+      <created>1655237653822</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655237653822</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update vector to arraylist">
+      <created>1655237731475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655237731475</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add action to btn Add contact">
+      <created>1655237760349</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655237760349</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add id to each contact">
+      <created>1655239531608</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239531608</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add verification if input is empty">
+      <created>1655239557706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239557706</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update savecContacts method">
+      <created>1655240407395</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655240407395</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update actionListener">
+      <created>1655242593320</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242593320</updated>
+    </task>
+    <task id="LOCAL-00013" summary="display numberOfContact">
+      <created>1655242619045</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242619045</updated>
+    </task>
+    <task id="LOCAL-00014" summary="seperate declaration and use">
+      <created>1655242637387</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242637387</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add a second type of constructor (with id specified)">
+      <created>1655242661118</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242661118</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add displayContactListConsole method">
+      <created>1655242693329</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242693329</updated>
+    </task>
+    <task id="LOCAL-00017" summary="some fix">
+      <created>1655242719035</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242719035</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add read of save files">
+      <created>1655242739066</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655242739066</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix">
+      <created>1655283566529</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283566529</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add btn to update display and fix display of data">
+      <created>1655283595165</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283595165</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add comments">
+      <created>1655283604358</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283604358</updated>
+    </task>
+    <task id="LOCAL-00022" summary="rename variable">
+      <created>1655283638042</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283638042</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add getContactList method">
+      <created>1655283657467</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283657467</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add editContact method">
+      <created>1655283672225</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283672225</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix constructor of Contact">
+      <created>1655283837255</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1655283837255</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix">
+      <created>1655284003707</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1655284003707</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fix syntax">
+      <created>1655284043823</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1655284043823</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fix display">
+      <created>1655295005359</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1655295005359</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -43,5 +270,33 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="addContact method" />
+    <MESSAGE value="add some methods in Contact class" />
+    <MESSAGE value="add saveContacts method" />
+    <MESSAGE value="rename class" />
+    <MESSAGE value="update vector to arraylist" />
+    <MESSAGE value="add action to btn Add contact" />
+    <MESSAGE value="add id to each contact" />
+    <MESSAGE value="add verification if input is empty" />
+    <MESSAGE value="update savecContacts method" />
+    <MESSAGE value="update actionListener" />
+    <MESSAGE value="display numberOfContact" />
+    <MESSAGE value="seperate declaration and use" />
+    <MESSAGE value="add a second type of constructor (with id specified)" />
+    <MESSAGE value="add displayContactListConsole method" />
+    <MESSAGE value="some fix" />
+    <MESSAGE value="add read of save files" />
+    <MESSAGE value="add btn to update display and fix display of data" />
+    <MESSAGE value="add comments" />
+    <MESSAGE value="rename variable" />
+    <MESSAGE value="add getContactList method" />
+    <MESSAGE value="add editContact method" />
+    <MESSAGE value="fix constructor of Contact" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="fix syntax" />
+    <MESSAGE value="fix display" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix display" />
   </component>
 </project>
