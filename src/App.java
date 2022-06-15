@@ -3,6 +3,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class App {
+    private final JTable table;
+    private final ContactManagement contactManagement;
+    private int numberOfContacts;
+    private final JLabel textNumberOfContact;
     public App() {
         // Gestion des contacts
         ContactManagement contactManagement = new ContactManagement();
@@ -33,6 +37,8 @@ public class App {
             contactManagement.addContact(getPrenom,getNom,getAge,getTelephone);
 
             contactManagement.saveContacts();
+
+            this.reloadData();
         });
 
         JMenuItem editContact = new JMenuItem("Modifier un contact");
@@ -49,6 +55,8 @@ public class App {
             contactManagement.editContact(getID, getInfoToChange,getNewInfo);
 
             contactManagement.saveContacts();
+
+            this.reloadData();
         });
 
         gestion.add(newContact);
@@ -117,5 +125,30 @@ public class App {
         }
 
         return input;
+    }
+
+    // Méthode permettant d'actualiser l'affichage du tableau des contacts et du nombre total de contacts
+    void reloadData() {
+        ArrayList<Contact> contactList = contactManagement.getContactList();
+        int countLine = 0;
+        while (contactList.size() > countLine) {
+            table.setValueAt(String.valueOf(contactList.get(countLine).getId()),countLine,0);
+            table.setValueAt(String.valueOf(contactList.get(countLine).getPrenom()),countLine,1);
+            table.setValueAt(String.valueOf(contactList.get(countLine).getNom()),countLine,2);
+            table.setValueAt(String.valueOf(contactList.get(countLine).getAge()),countLine,3);
+            table.setValueAt(String.valueOf(contactList.get(countLine).getTelephone()),countLine,4);
+            countLine++;
+        }
+        table.revalidate();
+        table.repaint();
+
+        numberOfContacts = contactManagement.getNumberOfContacts();
+        textNumberOfContact.setText("Nombre total de contacts : " + numberOfContacts);
+    }
+
+    // Méthode permettant d'obtenir le dernier id donné à un utilisateur
+    int getLastId() {
+        ArrayList<Contact> contactList = contactManagement.getContactList();
+        return contactList.get(contactList.size() - 1).getId() + 1;
     }
 }
