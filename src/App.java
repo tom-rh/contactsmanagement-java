@@ -57,15 +57,16 @@ public class App {
         menu.add(gestion);
         menu.add(help);
 
-        frame.setLayout(new GridLayout(20, 1));
+        frame.setLayout(new BorderLayout());
 
-        frame.add(menu);
-        frame.add(panel);
+        frame.add(menu, BorderLayout.NORTH);
+
+        //frame.add(panel);
 
         JLabel text = new JLabel();
         text.setText("Nombre total de contacts : " + contactManagement.getNumberOfContacts());
 
-        frame.add(text);
+        panel.add(text);
 
         // Bouton permettant d'actualiser l'affichage du tableau
         JButton btnUpdate =new JButton("Actualiser");
@@ -73,7 +74,7 @@ public class App {
             //this.displayContactList();
         });
 
-        frame.add(btnUpdate);
+        panel.add(btnUpdate);
 
         // L'en-têtes du JTable
         String[] column = {"ID", "Prénom", "Nom", "Age", "Telephone"};
@@ -96,7 +97,8 @@ public class App {
         table.setRowHeight(30);
         table.setSize(500,300);
 
-        frame.add(table);
+        panel.add(table);
+        frame.add(panel, BorderLayout.CENTER);
 
         frame.pack();
 
