@@ -22,6 +22,10 @@ public class ContactManagement {
         return _contactList.size();
     }
 
+    public ArrayList<Contact> getContactList() {
+        return _contactList;
+    }
+
     public void addContact( String prenom, String nom, int age, String telephone) {
         Contact contact = new Contact(prenom, nom, age, telephone);
         _contactList.add(contact);
