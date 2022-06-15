@@ -35,6 +35,32 @@ public class ContactManagement {
         _contactList.add(contact);
     }
 
+    public void editContact(int id, String choice, String input) {
+        int countLine = 0;
+        while (_contactList.size() > countLine) {
+            if (id == _contactList.get(countLine).getId()) {
+                switch (choice) {
+                    case "Prénom":
+                        _contactList.get(countLine).setPrenom(input);
+                        break;
+                    case "Nom":
+                        _contactList.get(countLine).setNom(input);
+                        break;
+                    case "Age":
+                        _contactList.get(countLine).setAge(Integer.parseInt(input));
+                        break;
+                    case "Téléphone":
+                        _contactList.get(countLine).setTelephone(input);
+                        break;
+                    default:
+                        System.out.println("Choix incorrect");
+                        break;
+                }
+            }
+            countLine++;
+        }
+    }
+
     public void saveContacts() {
         PrintWriter out;
         try {
