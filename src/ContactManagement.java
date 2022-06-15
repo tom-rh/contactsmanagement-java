@@ -40,21 +40,11 @@ public class ContactManagement {
         while (_contactList.size() > countLine) {
             if (id == _contactList.get(countLine).getId()) {
                 switch (choice) {
-                    case "Prénom":
-                        _contactList.get(countLine).setPrenom(input);
-                        break;
-                    case "Nom":
-                        _contactList.get(countLine).setNom(input);
-                        break;
-                    case "Age":
-                        _contactList.get(countLine).setAge(Integer.parseInt(input));
-                        break;
-                    case "Téléphone":
-                        _contactList.get(countLine).setTelephone(input);
-                        break;
-                    default:
-                        System.out.println("Choix incorrect");
-                        break;
+                    case "Prénom" -> _contactList.get(countLine).setPrenom(input);
+                    case "Nom" -> _contactList.get(countLine).setNom(input);
+                    case "Age" -> _contactList.get(countLine).setAge(Integer.parseInt(input));
+                    case "Téléphone" -> _contactList.get(countLine).setTelephone(input);
+                    default -> System.out.println("Choix incorrect");
                 }
             }
             countLine++;
@@ -70,10 +60,10 @@ public class ContactManagement {
         }
         int count = 0;
         while (_contactList.size() > count) {
-            out.write(String.valueOf(_contactList.get(count).getId()) + ";");
+            out.write(_contactList.get(count).getId() + ";");
             out.write(_contactList.get(count).getPrenom() + ";");
             out.write(_contactList.get(count).getNom() + ";");
-            out.write(String.valueOf(_contactList.get(count).getAge()) + ";");
+            out.write(_contactList.get(count).getAge() + ";");
             out.write(_contactList.get(count).getTelephone());
             out.println();
             count++;
@@ -85,7 +75,7 @@ public class ContactManagement {
         int count = 0;
         System.out.println("id ; prenom ; nom ; age ; telephone");
         while (_contactList.size() > count) {
-            System.out.println(String.valueOf(_contactList.get(count).getId()) + ";" + _contactList.get(count).getPrenom() + ";" + _contactList.get(count).getNom() + ";" + String.valueOf(_contactList.get(count).getAge()) + ";" + _contactList.get(count).getTelephone());
+            System.out.println(_contactList.get(count).getId() + ";" + _contactList.get(count).getPrenom() + ";" + _contactList.get(count).getNom() + ";" + _contactList.get(count).getAge() + ";" + _contactList.get(count).getTelephone());
             count++;
         }
     }

@@ -1,19 +1,10 @@
 public class Contact {
     private static int count = 0;
-    private int _id;
+    private final int _id;
     private String _prenom;
     private String _nom;
     private int _age;
     private String _telephone;
-
-    // Constructeur sans informations spécifiées
-    public Contact() {
-        _id = ++count;
-        _prenom = "Inconnu";
-        _nom = "Inconnu";
-        _age = 0;
-        _telephone = "";
-    }
 
     // Construteur avec les informations spécifiées mais sans ID
     public Contact(String prenom, String nom, int age, String telephone) {
